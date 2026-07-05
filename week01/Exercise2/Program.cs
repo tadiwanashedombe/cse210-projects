@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string grade = "invalid";
+        string grade = "Invalid";
 
         Console.Write("Enter mark percentage: ");
         int mark = int.Parse(Console.ReadLine());
@@ -35,6 +35,6 @@ class Program
             Console.WriteLine("Failed, Better luck next time.");
         }
         
-        Console.WriteLine($"Grade :{grade}");
+        Console.WriteLine($"Grade: {grade}");
     }
 }
