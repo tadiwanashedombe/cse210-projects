@@ -23,7 +23,6 @@ class Program
             }
         }
         int total = 0;
-        double avg = 0;
         int largest = 0;
 
         foreach(int num in numbers)
@@ -36,7 +35,7 @@ class Program
 
         Console.WriteLine($"The sum is: {total}");
         
-        avg = numbers.Average();
+        double avg = numbers.Average();
         Console.WriteLine($"The average is: {avg}");
 
         Console.WriteLine($"The largest number is: {largest}");
