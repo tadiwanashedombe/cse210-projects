@@ -4,12 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        string  name = "George" ;
-        int age = 70;
+     
+        House johnsonHome = new House();
+        johnsonHome._kitchen = new Blind();
+        johnsonHome._livingRoom = new Blind();
 
-        Console.WriteLine("There once was a man named "+ name);
-        Console.WriteLine("He was "+ age+" years old");
-        Console.WriteLine("He really liked the name "+ name);
-        Console.WriteLine("But didn't like being "+age);
+        johnsonHome._owner = "Johnson Family";
+
+        johnsonHome._kitchen._width = 60;
+        johnsonHome._kitchen._height = 48;
+        johnsonHome._kitchen._color = "white";
+        double kitchenMaterial = johnsonHome._kitchen.GetArea();
+
+        johnsonHome._livingRoom._width = 72;
+        johnsonHome._livingRoom._height = 52;
+        johnsonHome._livingRoom._color = "white";
+        double livingRoomMaterial = johnsonHome._livingRoom.GetArea();
+
+        Console.WriteLine(livingRoomMaterial);
+        
+            
     }
 }
+    
