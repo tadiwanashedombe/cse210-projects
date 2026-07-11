@@ -54,4 +54,30 @@ public class Journal
         Console.WriteLine("File Loaded Successfully");
 
     }
+    public void ShowEntries()
+    {
+
+        if (_entries.Count != 0)
+        {
+            Console.WriteLine($"\n{_entries.Count} entrie(s)\n");
+
+            int count = 1;
+
+            foreach (Entry entry in _entries)
+            {
+                Console.WriteLine($"{count}. {entry._date} - {entry._promptText}");
+                count++;
+            }
+
+            Console.Write("Which entry would you like to see? ");
+            int seeEntry = int.Parse(Console.ReadLine());
+            seeEntry -= 1;
+
+            _entries[seeEntry].Display();
+        }
+        else
+        {
+            Console.WriteLine("\n Error: No entries found load file or create new entries.");
+        }
+    }
 }

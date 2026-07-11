@@ -1,3 +1,4 @@
+// added a ShowEntries Function that displays snippets of the actual entry and allows user to select which entry to see
 using System;
 
 class Program
@@ -18,7 +19,8 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Show Entries");
+            Console.WriteLine("6. Quit");
             Console.Write("Which option would you like to take? ");
 
             string action = Console.ReadLine();
@@ -51,8 +53,11 @@ class Program
                 Console.Write("Enter file name to save with .txt : ");
                 string file = Console.ReadLine();
                 journal.SaveToFile(file);
+            }else if(action == "5")
+            {
+             journal.ShowEntries();
             }
-            else if (action == "5")
+            else if (action == "6")
             {
                 Console.WriteLine("Closing...");
                 break;
