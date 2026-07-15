@@ -1,31 +1,51 @@
-using System;
-
-
 public class Person
 {
-    // The C# convention is to start member variables with an underscore _
-    public string _givenName = "";
-    public string _familyName = "";
+    private string _title;
+    private string _firstName;
+    private string _lastName;
 
-    // A special method, called a constructor that is invoked using the  
-    // new keyword followed by the class name and parentheses.
     public Person()
     {
+        _title = "";
+        _firstName = "Anonymous";
+        _lastName = "Unknown";
     }
 
-    // A method that displays the person's full name as used in eastern 
-    // countries or <family name, given name>.
-    public void ShowEasternName()
+    public Person(string first, string last)
     {
-        Console.WriteLine($"{_familyName}, {_givenName}");
+        _title = "";
+        _firstName = first;
+        _lastName = last;
     }
 
-    // A method that displays the person's full name as used in western 
-    // countries or <given name family name>.
-    public void ShowWesternName()
+    public Person(string title, string first, string last)
     {
-        Console.WriteLine($"{_givenName} {_familyName}");
+        _title = title;
+        _firstName = first;
+        _lastName = last;
+    }
+    public string GetInformalSignature()
+    {
+        return "Thanks, "+_firstName;
     }
 
+    public string GetFormalSignature()
+    {
+        return "Sincerely, "+GetFullName();
+    }
+
+    private string GetFullName()
+    {
+        return _title +" "+_firstName+" "+_lastName;
+    }
+
+    public string GetFirstName()
+    {
+        return _firstName;
+    }
+
+    public void SetFirstName(string firstName)
+    {
+        _firstName = firstName;
+    }
 }
-    
