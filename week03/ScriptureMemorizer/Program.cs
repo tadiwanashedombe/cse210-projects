@@ -1,3 +1,4 @@
+// Added LoadFromFile that selects a verser randomly from a txt file
 using System;
 using System.Runtime.InteropServices;
 
@@ -5,10 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Reference reference = new Reference("Proverbs",27,16,18);
-        string text = ("Whosoever hideth her hideth the wind, and the ointment of his right hand, which bewrayeth itself.Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.18 Whoso keepeth the fig tree shall eat the fruit thereof: so he that waiteth on his master shall be honoured.");
-
-        Scripture scripture = new Scripture(reference,text);
+        Scripture scripture = Scripture.LoadFromFile();
 
         while (true)
         {
